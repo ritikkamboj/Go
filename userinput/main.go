@@ -8,7 +8,7 @@ import (
 
 func main() {
 	fmt.Println("Hey, What's your name ?")
-	// var name string
+	// var name stringb
 
 	// fmt.Scan(&name)
 	// fmt.Println("Hello, Mr. ", name)
