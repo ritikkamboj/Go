@@ -25,4 +25,19 @@ func main() {
 		}
 	}
 
+	// range keyword
+	// use with slice and string
+
+	numbers := []int{12, 45, 67, 15, 64}
+
+	for index, value := range numbers {
+		fmt.Printf("index of the number is %d and value is %d\n", index, value)
+	}
+
+	// use this with string case
+
+	data := "jai maata di"
+	for index, value := range data {
+		fmt.Printf("index is %d and character is %c\n", index, value)
+	}
 }
