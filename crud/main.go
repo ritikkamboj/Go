@@ -119,11 +119,37 @@ func performUpdateRequest() {
 
 }
 
+func performDeleteRequest() {
+	const myUrl = "https://jsonplaceholder.typicode.com/todos/1"
+
+	req, err := http.NewRequest(http.MethodDelete, myUrl, nil)
+	if err != nil {
+		fmt.Println("error ub delteing ", err)
+		return
+	}
+	// req.Header.Set("Content-type", "application/json")
+
+	client := http.Client{}
+	res, err := client.Do(req)
+	if err != nil {
+		fmt.Println("Error sendind request ", err)
+		return
+	}
+
+	defer res.Body.Close()
+
+	// data, _ := ioutil.ReadAll(res.Body)
+	// fmt.Println("Response :", string(data))
+	fmt.Println("Response :", res.Status)
+
+}
+
 func main() {
 
 	fmt.Println("learning crud ")
 	// performGetRequest()
 	// performPostRequest()
 
-	performUpdateRequest()
+	// performUpdateRequest()
+	performDeleteRequest()
 }
